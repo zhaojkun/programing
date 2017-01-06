@@ -22,8 +22,9 @@ calc_score :: [Int] ->  [Int] -> (Int,Int)
 
 calc_score [] _ = (0,0)
 calc_score _ [] = (0,0)
-calc_score (a:as) (b:bs) = 
-           if a>b then (reta+1,retb) else
-           if a<b then (reta,retb+1)
-           else (reta,retb)
+calc_score (a:as) (b:bs) 
+           | a>b = (reta+1,retb) 
+           | a<b = (reta,retb+1)
+           | otherwise = (reta,retb)
            where (reta,retb) = calc_score as bs
+           
