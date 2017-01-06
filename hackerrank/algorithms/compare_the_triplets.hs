@@ -15,9 +15,8 @@ main = do
      let b1 = read $ b0_t!!1 :: Int
      let b2 = read $ b0_t!!2 :: Int
 
-     let res = calc_score [a0,a1,a2] [b0,b1,b2]
-
-     print res
+     let (ra,rb) = calc_score [a0,a1,a2] [b0,b1,b2]
+     putStrLn(show ra ++ " " ++ show rb)
      
 calc_score :: [Int] ->  [Int] -> (Int,Int)
 
