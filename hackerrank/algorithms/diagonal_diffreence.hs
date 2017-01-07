@@ -8,10 +8,8 @@ main = do
      let n =read n_temp ::Int
      a_temp <- getMultipleLines n
      let a = map ( map (read::String->Int) . words) a_temp
-     let b1 = sum [a!!i!!i | i <-[0..n-1]]
-     let b2 = sum [a!!i!!(n-1-i) | i<-[0..n-1]]
-     let rs = abs(b1-b2)
-     print rs
+     let b1 = abs $ sum [a!!i!!i - a!!i!!(n-1-i) | i <-[0..n-1]]
+     print b1
 
 getMultipleLines :: Int -> IO[String]
 
