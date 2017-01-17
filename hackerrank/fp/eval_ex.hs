@@ -25,5 +25,5 @@ getMultipleLines n
 expp :: Double -> Double
 expp x = sum $ zipWith (\y1 y2 -> y1/y2) a b
   where
-    a = scanl (*) 1 (replicate 10 x)
-    b = scanl (*) 1 [1..10]
+    a = scanl (*) 1.0 (replicate 9 x)
+    b = scanl (*) 1.0 [1..9]
